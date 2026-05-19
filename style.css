@@ -1,0 +1,115 @@
+:root {
+    --bg-color: #050505;
+    --text-color: #ffffff;
+    --muted-text: #888888;
+    --border-color: #333333;
+    --accent-color: #ffffff;
+    --font-display: 'Syncopate', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition: all 0.2s ease;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+h1, h2, h3, .nav-btn, .buy-btn, .lang-select {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+}
+
+header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 0.1em; cursor: pointer; }
+
+.controls-container { display: flex; gap: 2rem; align-items: center; }
+
+.lang-select {
+    background: transparent;
+    color: var(--muted-text);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    outline: none;
+}
+.lang-select:hover { color: var(--text-color); border-color: var(--text-color); }
+.lang-select option { background: var(--bg-color); color: var(--text-color); }
+
+.nav-tabs { display: flex; gap: 1.5rem; }
+.nav-btn {
+    background: transparent; border: none; color: var(--muted-text);
+    font-size: 0.8rem; letter-spacing: 0.05em; cursor: pointer;
+    padding-bottom: 0.2rem; border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+.nav-btn:hover { color: var(--text-color); }
+.nav-btn.active { color: var(--text-color); border-bottom-color: var(--text-color); }
+
+main { padding: 4rem 2rem; max-width: 1400px; margin: 0 auto; }
+
+.section { display: none; animation: fadeIn 0.4s ease forwards; }
+.section.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 3rem 2rem; }
+
+.product-card { border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: var(--transition); }
+.product-card:hover { border-color: var(--accent-color); }
+
+.product-image {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #111; filter: grayscale(20%);
+}
+
+.product-info { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; }
+.product-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.product-title { font-family: var(--font-body); font-weight: 600; font-size: 1rem; }
+.product-price { font-family: var(--font-display); font-size: 0.9rem; color: var(--muted-text); }
+
+.buy-btn {
+    margin-top: auto; width: 100%; background: transparent;
+    color: var(--text-color); border: 1px solid var(--border-color);
+    padding: 1rem; font-size: 0.8rem; letter-spacing: 0.1em;
+    cursor: pointer; transition: var(--transition); text-align: center; text-decoration: none; display: inline-block;
+}
+.buy-btn:hover { background: var(--text-color); color: var(--bg-color); }
+.buy-btn.sold-out { color: var(--muted-text); border-style: dashed; cursor: not-allowed; pointer-events: none; }
+.buy-btn.sold-out:hover { background: transparent; color: var(--muted-text); }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 1rem; }
+.portfolio-img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; border: 1px solid var(--border-color); }
+
+[dir="rtl"] .logo { letter-spacing: 0; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] .nav-btn, [dir="rtl"] .buy-btn { letter-spacing: 0; }
+
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 1.5rem; padding: 1rem; }
+    .controls-container { width: 100%; justify-content: space-between; }
+    .nav-tabs { gap: 1rem; }
+    .nav-btn { font-size: 0.7rem; }
+    .grid-container, .portfolio-grid { grid-template-columns: 1fr; }
+}

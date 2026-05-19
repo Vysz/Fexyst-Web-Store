@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEXYST | Custom Caps</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syncopate:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Syncopate:wght@400;700&display=swap)" rel="stylesheet">
+
+    <!-- Link to our external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">FEXYST</div>
+        <div class="controls-container">
+            <nav class="nav-tabs">
+                <button class="nav-btn active" data-target="instock" data-i18n="tab_instock">IN STOCK</button>
+                <button class="nav-btn" data-target="sold" data-i18n="tab_sold">SOLD</button>
+                <button class="nav-btn" data-target="portfolio" data-i18n="tab_portfolio">PORTFOLIO</button>
+            </nav>
+            <select class="lang-select" id="lang-switch">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+                <option value="he">HE</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section id="instock" class="section active">
+            <div class="grid-container">
+                <article class="product-card">
+                    <img src="[https://placehold.co/600x600/111/555?text=SPIKED+CAP+01](https://placehold.co/600x600/111/555?text=SPIKED+CAP+01)" alt="Spiked Cap" class="product-image">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h2 class="product-title">V1 AUDI DISTRESSED</h2>
+                            <span class="product-price">₪350</span>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--muted-text);">Hand-distressed, metal spikes, custom hardware.</p>
+                        <a href="#" class="buy-btn" data-i18n="btn_buy">BUY NOW</a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img src="[https://placehold.co/600x600/111/555?text=CAMO+CROSS+CAP](https://placehold.co/600x600/111/555?text=CAMO+CROSS+CAP)" alt="Camo Cap" class="product-image">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h2 class="product-title">V2 DESERT CROSS</h2>
+                            <span class="product-price">₪400</span>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--muted-text);">Camo base, chain detailing, bone cross.</p>
+                        <a href="#" class="buy-btn" data-i18n="btn_buy">BUY NOW</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="sold" class="section">
+            <div class="grid-container">
+                <article class="product-card">
+                    <img src="[https://placehold.co/600x600/111/555?text=BONE+CAP+SOLD](https://placehold.co/600x600/111/555?text=BONE+CAP+SOLD)" alt="Bone Cap" class="product-image" style="opacity: 0.6;">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h2 class="product-title">ARCHIVE BONE SPIKE</h2>
+                        </div>
+                        <a href="#" class="buy-btn sold-out" data-i18n="btn_soldout">SOLD OUT</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="portfolio-grid">
+                 <img src="[https://placehold.co/800x1000/111/555?text=EDITORIAL+SHOT+1](https://placehold.co/800x1000/111/555?text=EDITORIAL+SHOT+1)" alt="Editorial" class="portfolio-img">
+                 <img src="[https://placehold.co/800x1000/111/555?text=EDITORIAL+SHOT+2](https://placehold.co/800x1000/111/555?text=EDITORIAL+SHOT+2)" alt="Editorial" class="portfolio-img">
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to our external JavaScript files -->
+    <script src="i18n.js"></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
